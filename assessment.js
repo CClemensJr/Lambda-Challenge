@@ -7,7 +7,9 @@ After writing your function uncomment the matching function reference at the bot
 // 1. Write a function called helloWorld that returns the string 'Hello World!'.
 
 function helloWorld() {
+  var helloWorld = 'Hello World!';
 
+  return helloWorld;
 }
 
 /*
@@ -23,8 +25,26 @@ function helloWorld() {
              lambdaSchool(8); // returns 8
 */
 
-function lambdaSchool() {
-
+function lambdaSchool(num) {
+  var divisibleBy3 = 'Lambda';
+  var divisibleBy5 = 'School';
+  
+  if (num % 3 == 0 && num % 5 == 0)
+  {
+    return (`${divisibleBy3} ${divisibleBy5}`);
+  }
+  else if (num % 3 == 0)
+  {
+    return divisibleBy3;
+  }
+  else if (num % 5 == 0)
+  {
+    return divisibleBy5;
+  }
+  else
+  {
+    return num;
+  }
 }
 
 /*
@@ -38,8 +58,17 @@ function lambdaSchool() {
              longestString(['JavaScript', 'HTML', 'CSS']); // returns 'JavaScript'
 */
 
-function longestString() {
+function longestString(strs) {
+  var longestString = ' ';
+  for (var i = 0; i < strs.length; i++)
+  {
+    if (strs[i].length > longestString.length)
+    {
+      longestString = strs[i];
+    }
+  }
 
+  return longestString;
 }
 
 /*
@@ -63,8 +92,18 @@ function longestString() {
              computeUserAverageAge(users); // returns 62 (This number is rounded up from 61.6666)
 */
 
-function computeUserAverageAge() {
+function computeUserAverageAge(users) {
+  var age = 0;
+  var averageAge;
 
+  for (var i = 0; i < users.length; i++)
+  {
+    age += users[i].age;
+  }
+
+  averageAge = Math.round(age / users.length);
+
+  return averageAge;
 }
 
 module.exports = {
